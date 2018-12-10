@@ -15,7 +15,7 @@ namespace Buffteks.Models
 
         // Join
         
-        /* protected override void  OnModelCreating(ModelBuilder modelBuilder)
+        protected override void  OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<Member>().ToTable("Client");
@@ -23,7 +23,7 @@ namespace Buffteks.Models
             modelBuilder.Entity<Project>().ToTable("Project");
  
             modelBuilder.Entity<ProjectAssign>()
-                .HasKey(pr => new {pr.ProjectID, pr.ProjectParticipantID});
+                .HasKey(pr => new {pr.ProjectID, pr.ID});
 
             //set up the one to many map from Project to ProjectAssign
             modelBuilder.Entity<ProjectAssign>()
@@ -35,9 +35,9 @@ namespace Buffteks.Models
             modelBuilder.Entity<ProjectAssign>()
                 .HasOne(pr => pr.ProjectParticipant)
                 .WithMany(pp => pp.Projects)
-                .HasForeignKey(pr => pr.ProjectParticipantID);
+                .HasForeignKey(pr => pr.ID);
         }    
-        */    
+           
 
     }
 }    
