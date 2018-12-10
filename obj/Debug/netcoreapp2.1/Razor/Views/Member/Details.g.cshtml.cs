@@ -164,7 +164,7 @@ using Buffteks.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1044, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40e73bcb8c5c4043b44ea1a52898171e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92d7695cfec14e969655ef754e8a68f2", async() => {
                 BeginContext(1090, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -199,7 +199,7 @@ using Buffteks.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(1106, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7996816baa546328480b16b5ecb9fee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8908ba7b1c644e489bbcce2543318bd", async() => {
                 BeginContext(1128, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
