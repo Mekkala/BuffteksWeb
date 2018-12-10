@@ -12,6 +12,7 @@ namespace Buffteks.Models
         {
              using(var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
+                context.Database.EnsureCreated();
                 // Member
                 if (context.Members.Any())
                 {
