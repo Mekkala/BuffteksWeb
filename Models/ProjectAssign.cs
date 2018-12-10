@@ -8,7 +8,7 @@ namespace Buffteks.Models
 {
     public class ProjectAssign 
     {
-        public int ID { get; set; }
+        public int ParticipantID { get; set; }
         public ProjectParticipant ProjectParticipant { get; set; }
         public string ProjectID { get; set; }
         public Project Project { get; set; }

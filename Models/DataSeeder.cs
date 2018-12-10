@@ -12,6 +12,7 @@ namespace Buffteks.Models
         {
              using(var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
+                
                 context.Database.EnsureCreated();
                 // Member
                 if (context.Members.Any())
@@ -104,27 +105,27 @@ namespace Buffteks.Models
                     // grab client
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(0).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(0),
-                                        ID = clientsFmDb.ElementAt(0).ID,
+                                        ParticipantID = clientsFmDb.ElementAt(0).ID,
                                         ProjectParticipant = clientsFmDb.ElementAt(0)},
                     // grab first 4 members(1 2 3 & 4)                    
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(0).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(0),
-                                        ID = membersFmDb.ElementAt(0).ID,
+                                        ParticipantID = membersFmDb.ElementAt(0).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(0)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(0).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(0),
-                                        ID = membersFmDb.ElementAt(1).ID,
+                                        ParticipantID = membersFmDb.ElementAt(1).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(1)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(0).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(0),
-                                        ID = membersFmDb.ElementAt(2).ID,
+                                        ParticipantID = membersFmDb.ElementAt(2).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(2)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(0).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(0),
-                                        ID = membersFmDb.ElementAt(3).ID,
+                                        ParticipantID = membersFmDb.ElementAt(3).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(3)},                                                            
                 };
                 context.AddRange(projectoneassign);
@@ -137,27 +138,27 @@ namespace Buffteks.Models
                     // grab client 2
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(1).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(1),
-                                        ID = clientsFmDb.ElementAt(1).ID,
+                                        ParticipantID = clientsFmDb.ElementAt(1).ID,
                                         ProjectParticipant = clientsFmDb.ElementAt(1)},
                     // grab 4 members(5 6 7 & 8)                    
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(1).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(1),
-                                        ID = membersFmDb.ElementAt(4).ID,
+                                        ParticipantID = membersFmDb.ElementAt(4).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(4)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(1).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(1),
-                                        ID = membersFmDb.ElementAt(5).ID,
+                                        ParticipantID = membersFmDb.ElementAt(5).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(5)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(1).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(1),
-                                        ID = membersFmDb.ElementAt(6).ID,
+                                        ParticipantID = membersFmDb.ElementAt(6).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(6)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(1).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(1),
-                                        ID = membersFmDb.ElementAt(7).ID,
+                                        ParticipantID = membersFmDb.ElementAt(7).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(7)},                                                            
                 };
                 context.AddRange(projecttwoassign);
@@ -170,27 +171,27 @@ namespace Buffteks.Models
                     // grab client 3
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(2).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(2),
-                                        ID = clientsFmDb.ElementAt(2).ID,
+                                        ParticipantID = clientsFmDb.ElementAt(2).ID,
                                         ProjectParticipant = clientsFmDb.ElementAt(2)},
                     // grab 4 members(9 10 11 & 12)                    
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(2).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(2),
-                                        ID = membersFmDb.ElementAt(8).ID,
+                                        ParticipantID = membersFmDb.ElementAt(8).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(8)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(2).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(2),
-                                        ID = membersFmDb.ElementAt(9).ID,
+                                        ParticipantID = membersFmDb.ElementAt(9).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(9)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(2).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(2),
-                                        ID = membersFmDb.ElementAt(10).ID,
+                                        ParticipantID = membersFmDb.ElementAt(10).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(10)},
 
                     new ProjectAssign { ProjectID = projectsFmDb.ElementAt(2).ID.ToString(),
                                         Project = projectsFmDb.ElementAt(2),
-                                        ID = membersFmDb.ElementAt(11).ID,
+                                        ParticipantID = membersFmDb.ElementAt(11).ID,
                                         ProjectParticipant = membersFmDb.ElementAt(11)},                                                            
                 };
                 context.AddRange(projectthreeassign);

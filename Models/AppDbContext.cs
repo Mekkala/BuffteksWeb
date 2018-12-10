@@ -4,9 +4,7 @@ namespace Buffteks.Models
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext (DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
+        public AppDbContext (DbContextOptions<AppDbContext> options): base(options){
         }
         public DbSet<Member> Members { get; set; }
         public DbSet<Client> Clients { get; set; }
@@ -15,7 +13,7 @@ namespace Buffteks.Models
 
         // Join
         
-       /* protected override void  OnModelCreating(ModelBuilder modelBuilder)
+        /*protected override void  OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<Member>().ToTable("Client");
@@ -25,7 +23,7 @@ namespace Buffteks.Models
             modelBuilder.Entity<ProjectAssign>()
                 .HasKey(pr => new {pr.ProjectID, pr.ID});
 
-            //Project to ProjectAssign
+             //Project to ProjectAssign
             modelBuilder.Entity<ProjectAssign>()
                 .HasOne(pr => pr.Project)
                 .WithMany(p => p.Participants)
@@ -37,9 +35,7 @@ namespace Buffteks.Models
                 .WithMany(pp => pp.Projects)
                 .HasForeignKey(pr => pr.ID);
         }  
-        */
-         
-           
+        */     
 
     }
 }    
