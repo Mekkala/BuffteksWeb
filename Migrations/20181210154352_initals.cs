@@ -7,6 +7,19 @@ namespace Buffteks.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Project",
+                columns: table => new
+                {
+                    ID = table.Column<string>(nullable: false),
+                    ProjectName = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Project", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProjectParticipant",
                 columns: table => new
                 {
@@ -26,53 +39,33 @@ namespace Buffteks.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Projects",
-                columns: table => new
-                {
-                    ID = table.Column<string>(nullable: false),
-                    ProjectName = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Projects", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProjectAssigns",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ProjectParticipantID = table.Column<int>(nullable: true),
-                    ProjectID = table.Column<string>(nullable: true)
+                    ParticipantID = table.Column<int>(nullable: false),
+                    ProjectID = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProjectAssigns", x => x.ID);
+                    table.PrimaryKey("PK_ProjectAssigns", x => new { x.ProjectID, x.ParticipantID });
                     table.ForeignKey(
-                        name: "FK_ProjectAssigns_Projects_ProjectID",
-                        column: x => x.ProjectID,
-                        principalTable: "Projects",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ProjectAssigns_ProjectParticipant_ProjectParticipantID",
-                        column: x => x.ProjectParticipantID,
+                        name: "FK_ProjectAssigns_ProjectParticipant_ParticipantID",
+                        column: x => x.ParticipantID,
                         principalTable: "ProjectParticipant",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProjectAssigns_Project_ProjectID",
+                        column: x => x.ProjectID,
+                        principalTable: "Project",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjectAssigns_ProjectID",
+                name: "IX_ProjectAssigns_ParticipantID",
                 table: "ProjectAssigns",
-                column: "ProjectID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProjectAssigns_ProjectParticipantID",
-                table: "ProjectAssigns",
-                column: "ProjectParticipantID");
+                column: "ParticipantID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -81,10 +74,10 @@ namespace Buffteks.Migrations
                 name: "ProjectAssigns");
 
             migrationBuilder.DropTable(
-                name: "Projects");
+                name: "ProjectParticipant");
 
             migrationBuilder.DropTable(
-                name: "ProjectParticipant");
+                name: "Project");
         }
     }
 }
